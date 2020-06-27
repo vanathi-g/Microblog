@@ -1,0 +1,175 @@
+/* COLOR DEFINITIONS */
+
+:root{
+
+	--richBlack: #0E1116;
+	--bone: #EEE4D3;
+	--boneLight: #E2D2B6;
+	--bittersweet: #FF6B6B;
+	--lightBitterSweet: #FFB1A1;
+};
+
+/* COMMON TO ALL PAGES */
+
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Raleway', sans-serif;
+}
+
+
+.btn, .page-link{
+	margin-bottom: 0.5%;
+	background-color: var(--bittersweet);
+  	border: 1px solid var(--bittersweet);
+  	color: white;
+}
+.btn:hover, .page-link:hover{
+	background-color: var(--lightBitterSweet);
+  	border: 1px solid var(--lightBitterSweet);
+  	color: black;
+}
+
+/* FOR NAVBAR */
+
+.navbar {
+	background: var(--richBlack);
+}
+
+.nav-link{
+	color: white;
+	cursor: pointer;
+}
+
+.navbar-brand{
+	color: white;
+}
+
+.navbar-brand:hover{
+	color: var(--bone);
+}
+
+.navbar-brand img{
+	width: 35px;
+	height: 40px;
+	background-color: transparent;
+	padding-right: 5px;
+}
+
+.nav-link{
+	margin-right: 1em !important;
+}
+
+.nav-link:hover{
+	color: var(--bone);
+}
+
+.navbar-collapse{
+	justify-content: flex-start;
+}
+
+/* FOR BACKGROUND COMMON TO ALL PAGES */
+
+.main-background{
+
+	display: flex;
+	justify-content: center;
+	align-content: center;
+
+  	background-size: cover;
+  	background-position: center;
+  	position: relative;
+
+  	background-color: white;
+}
+
+.body-container{
+	margin: 3% 0%;
+}
+
+/* FOR SIGN-IN, REGISTER, RESET PASSWORD PAGES (basically all authentication pages)  */
+
+.auth-container{
+	border-radius: 0.9em;
+	padding: 5% 5%;
+	background-color: var(--bone);
+	color: black;
+	min-height: 40vh;
+
+	background-image: url('../img/pen.png');
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+/* FOR POSTS */
+
+.post-container{
+	align-self: flex-start;
+	min-height: 85vh;
+	border-radius: 0.9em;
+	margin-top: 1%;
+	background-color: var(--bone);
+}
+
+.post-entry, .explore-header{
+	padding: 3% 5%;
+	padding-bottom: 0%;
+}
+
+.post-list{
+	padding: 0% 5%;
+}
+
+
+/* TABLES */
+
+.user-post{
+	background-color: var(--boneLight);
+  	color: #000;
+  	border-radius: 0.8em 1.7em;
+}
+
+.user-post tbody tr:hover td, .user-post tbody tr:hover th {
+  background-color: var(--boneLight);
+}
+
+.user-profile tbody tr td{
+	padding-left: 5%;
+	padding-bottom: 0%;
+	padding-top: 3%;
+}
+
+.user-profile tr td, .user-post tr td{
+	border-top: none;
+}
+
+.user-profile .btn{
+	margin-bottom: 0%;
+}
+
+
+/* NAVBAR FOR POSTS */
+
+.post-nav-bar{
+	padding: 3% 5%;
+}
+
+/* LINKS AND ALERTS */
+
+.auth-container a:visited, .auth-container a:link, 
+.post-list a:visited, .post-list a:link{
+	color: var(--bittersweet);
+}
+
+.auth-container a:hover, .post-list a:hover{
+	color: #CC0000;
+}
+
+/* FOR SMALL SCREENS (MOBILE)*/
+
+@media only screen and (max-width: 767px){
+	.auth-container{
+		background-image: none;
+	}
+}
