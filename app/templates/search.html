@@ -1,21 +1,11 @@
 {% extends "base.html" %}
-{% import 'bootstrap/wtf.html' as wtf %}
 
 {% block app_content %}
 
-    {% if form %}
-        <div class="container post-entry">
-            {{ wtf.quick_form(form) }}
+    <div class="container explore-header">
+            <h2> SEARCH RESULTS</h2>
             <hr>
         </div>
-    {% endif %}
-
-    {% if not form %}
-        <div class="container explore-header">
-            <h2> EXPLORE </h2>
-            <hr>
-        </div>
-    {% endif %}
 
     <div class="container post-list">
         {% for post in posts %}
@@ -28,16 +18,15 @@
             <ul class="pagination justify-content-between">
                 <li class="page-item {% if not prev_url %} disabled {% endif %}">
                     <a class="page-link" href="{{ prev_url or '#' }}">
-                        <span aria-hidden="true">&larr;</span> Newer posts
+                        <span aria-hidden="true">&larr;</span> Previous Results
                     </a>
                 </li>
                 <li class="page-item {% if not next_url %} disabled {% endif %}">
                     <a class="page-link" href="{{ next_url or '#' }}">
-                        Older posts <span aria-hidden="true">&rarr;</span>
+                        Next Results <span aria-hidden="true">&rarr;</span>
                     </a>
                 </li>
             </ul>
         </nav>
     </div>
-
 {% endblock %}

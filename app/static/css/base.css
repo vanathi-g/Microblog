@@ -1,5 +1,11 @@
-/* COLOR DEFINITIONS */
+/* COMMON TO ALL PAGES */
+body {
+	padding: 0;
+	margin: 0;
+	font-family: 'Titillium Web', sans-serif;
+}
 
+/* COLOR DEFINITIONS */
 :root{
 
 	--richBlack: #0E1116;
@@ -7,14 +13,6 @@
 	--boneLight: #E2D2B6;
 	--bittersweet: #FF6B6B;
 	--lightBitterSweet: #FFB1A1;
-};
-
-/* COMMON TO ALL PAGES */
-
-body {
-	padding: 0;
-	margin: 0;
-	font-family: 'Raleway', sans-serif;
 }
 
 
@@ -94,7 +92,6 @@ body {
 	padding: 5% 5%;
 	background-color: var(--bone);
 	color: black;
-	min-height: 40vh;
 
 	background-image: url('../img/pen.png');
 	background-position: center center;
@@ -102,11 +99,16 @@ body {
 	background-size: contain;
 }
 
+/* FOR ERRORS */
+.error-container{
+	padding: 3% 5%;
+	min-height: 40vh;
+}
+
 /* FOR POSTS */
 
 .post-container{
 	align-self: flex-start;
-	min-height: 85vh;
 	border-radius: 0.9em;
 	margin-top: 1%;
 	background-color: var(--bone);
@@ -119,6 +121,12 @@ body {
 
 .post-list{
 	padding: 0% 5%;
+}
+
+/* EDIT PROFILE PAGE */
+
+.edit-profile-container{
+	padding: 3% 5%;
 }
 
 
@@ -135,7 +143,7 @@ body {
 }
 
 .user-profile tbody tr td{
-	padding-left: 5%;
+	padding-left: 20px;
 	padding-bottom: 0%;
 	padding-top: 3%;
 }
@@ -158,11 +166,12 @@ body {
 /* LINKS AND ALERTS */
 
 .auth-container a:visited, .auth-container a:link, 
-.post-list a:visited, .post-list a:link{
+.post-list a:visited, .post-list a:link,
+.error-container a:visited, .error-container a:link{
 	color: var(--bittersweet);
 }
 
-.auth-container a:hover, .post-list a:hover{
+.auth-container a:hover, .post-list a:hover, .error-container a:hover{
 	color: #CC0000;
 }
 

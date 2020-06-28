@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}">
-	<link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap" rel="stylesheet">
 
 
 	<title>Microblog</title>
@@ -35,6 +35,19 @@
 					</li>
 				</ul>
 				<ul class="navbar-nav ml-auto">
+
+					{% if g.search_form %}
+					<li style="padding-right:10px">
+		                <form class="navbar-form navbar-left form-inline" method="get"
+		                        action="{{ url_for('main.search') }}">
+		                    <div class="form-group">
+		                        {{ g.search_form.q(size=20, class='form-control',
+		                            placeholder=g.search_form.q.label.text) }}
+		                    </div>
+		                </form>
+		            </li>
+		            {% endif %}
+
                     {% if current_user.is_anonymous %}
 					<li class="nav-item">
 						<a class="nav-link" href="{{ url_for('auth.login') }}">Login</a>
@@ -72,10 +85,10 @@
 
 			</div>
 
-			{% if posts %}
-			<div class="container post-container">
-			{% else %}
+			{% if current_user.is_anonymous %}
 			<div class="container auth-container">
+			{% else %}
+			<div class="container post-container">
 			{% endif %}
 
 		    {# application content needs to be provided in the app_content block #}

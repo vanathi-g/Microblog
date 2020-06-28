@@ -15,6 +15,8 @@ class Config(object):
 	MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS') is not None
 	MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
 	MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
-	ADMINS = ['leopanda217@gmail.com']
+	ADMINS = ['sample.microblog@gmail.com']
+
+	ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
 
 	POSTS_PER_PAGE = 10
